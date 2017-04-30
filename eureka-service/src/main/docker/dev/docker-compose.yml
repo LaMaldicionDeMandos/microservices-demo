@@ -2,7 +2,7 @@ version: '2'
 services:
   eureka-service:
     build: ..
-    image: pasut/pasut/tmx-eureka-service
+    image: lamaldiciondemandos/tmx-eureka-service:demo1
     ports:
       - "8761:8761"
     environment:
