@@ -1,0 +1,9 @@
+version: '2'
+services:
+  eureka-service:
+    build: ..
+    image: lamaldiciondemandos/tmx-config-service
+    ports:
+      - "8888:8888"
+    environment:
+    PROFILE: "prod"
