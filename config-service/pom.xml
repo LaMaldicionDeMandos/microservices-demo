@@ -84,11 +84,6 @@
 	                 <imageName>lamaldiciondemandos/${docker.image.name}:${docker.image.tag}</imageName>
 	                 <dockerDirectory>${basedir}/target/dockerfile</dockerDirectory>
 					 <serverId>docker-hub</serverId>
-					 <registry>hub.docker.com/lamaldiciondemandos</registry>
-					 <authConfig>
-						 <username>lamaldiciondemandos</username>
-						 <password>jajaja capaz que te digo</password>
-					 </authConfig>
 	                 <resources>
 	                     <resource>
 	                         <targetPath>/</targetPath>
