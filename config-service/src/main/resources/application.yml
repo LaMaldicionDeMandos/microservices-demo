@@ -1,0 +1,12 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      enable: true
+      server:
+        git:
+          uri: git@github.com:LaMaldicionDeMandos/microservices-demo/
+          searchPaths: configuration/service-one, configuration/service-two
