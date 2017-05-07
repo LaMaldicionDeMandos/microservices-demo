@@ -1,6 +1,6 @@
 version: '2'
 services:
-  eureka-service:
+  config-service:
     build: ..
     image: lamaldiciondemandos/tmx-config-service:v1
     ports:

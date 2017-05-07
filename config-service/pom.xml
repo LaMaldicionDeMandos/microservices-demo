@@ -8,8 +8,8 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<docker.image.name>tmx-config-service</docker.image.name>
-    	<docker.image.tag>demo1</docker.image.tag>
+		<docker.image.name>lamaldiciondemandos/tmx-config-service</docker.image.name>
+		<docker.image.tag>v1</docker.image.tag>
 	</properties>
 
 	<parent>
@@ -25,74 +25,44 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-             	<artifactId>maven-resources-plugin</artifactId>
-             	<executions>
-                 	<execution>
-                     	<id>copy-resources</id>
-                     	<!-- here the phase you need -->
-                     	<phase>validate</phase>
-                     	<goals>
-                         	<goal>copy-resources</goal>
-                     	</goals>
-                     	<configuration>
-                         	<outputDirectory>${basedir}/target/dockerfile</outputDirectory>
-                         	<resources>
-                             	<resource>
-                                 	<directory>src/main/docker</directory>
-                                 	<filtering>true</filtering>
-                             	</resource>
-                         	</resources>
-                     	</configuration>
-                 	</execution>
-             	</executions>
-         	</plugin>
-         	<plugin>
-	             <groupId>com.spotify</groupId>
-	             <artifactId>docker-maven-plugin</artifactId>
-	             <version>0.4.13</version>
+				<artifactId>maven-resources-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>build-image</id>
-						<phase>package</phase>
+						<id>copy-resources</id>
+						<!-- here the phase you need -->
+						<phase>validate</phase>
 						<goals>
-							<goal>build</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>tag-image</id>
-						<phase>package</phase>
-						<goals>
-							<goal>tag</goal>
+							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<image>${docker.image.name}:${docker.image.tag}</image>
-							<newName>lamaldiciondemandos/${docker.image.name}:${docker.image.tag}</newName>
-						</configuration>
-					</execution>
-					<execution>
-						<id>push-image</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>push</goal>
-						</goals>
-						<configuration>
-							<imageName>lamaldiciondemandos/${docker.image.name}:${docker.image.tag}</imageName>
+							<outputDirectory>${basedir}/target/dockerfile</outputDirectory>
+							<resources>
+								<resource>
+									<directory>src/main/docker</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
 						</configuration>
 					</execution>
 				</executions>
-	             <configuration>
-	                 <imageName>lamaldiciondemandos/${docker.image.name}:${docker.image.tag}</imageName>
-	                 <dockerDirectory>${basedir}/target/dockerfile</dockerDirectory>
-					 <serverId>docker-hub</serverId>
-	                 <resources>
-	                     <resource>
-	                         <targetPath>/</targetPath>
-	                         <directory>${project.build.directory}</directory>
-	                         <include>${project.build.finalName}.jar</include>
-	                     </resource>
-	                 </resources>
-	             </configuration>
-         </plugin>
+			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.4.13</version>
+				<configuration>
+					<imageName>${docker.image.name}:${docker.image.tag}</imageName>
+					<dockerDirectory>${basedir}/target/dockerfile</dockerDirectory>
+					<serverId>docker-hub</serverId>
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}.jar</include>
+						</resource>
+					</resources>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -108,18 +78,18 @@
 		</dependencies>
 	</dependencyManagement>
 
-    <dependencies>
-    	<dependency>
-    		<groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
-    	</dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
-    </dependencies>
+	</dependencies>
 </project>
