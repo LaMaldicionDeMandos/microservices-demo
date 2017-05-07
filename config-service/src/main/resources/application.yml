@@ -9,4 +9,4 @@ spring:
       server:
         git:
           uri: git@github.com:LaMaldicionDeMandos/microservices-demo/
-          searchPaths: configuration/service-one, configuration/service-two
+          searchPaths: configuration/service-test
