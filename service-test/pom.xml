@@ -10,19 +10,15 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<docker.image.name>lamaldiciondemandos/tmx-test-service</docker.image.name>
 		<docker.image.tag>v1</docker.image.tag>
+		<spring.boot.version>1.4.4.RELEASE</spring.boot.version>
 	</properties>
-
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.1.RELEASE</version>
-	</parent>
 
 	<build>
 		<plugins>
 			<plugin> <!-- Este plugin permite crear un jar, ademas tiene el goal spring-boot:run -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring.boot.version}</version>
             </plugin>
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -72,7 +68,7 @@
     			<!-- Import dependency management from Spring Boot -->
 	            <groupId>org.springframework.boot</groupId>
 	            <artifactId>spring-boot-dependencies</artifactId>
-	            <version>${spring.boot.version}</version>
+				<version>${spring.boot.version}</version>
 	            <type>pom</type>
 	            <scope>import</scope>
     		</dependency>
@@ -90,7 +86,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>${spring.boot.version}</version>
         </dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
