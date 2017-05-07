@@ -1,0 +1,9 @@
+greeting: "Holis Dev"
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://54.202.26.189:8761/eureka/
