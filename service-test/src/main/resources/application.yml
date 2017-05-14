@@ -3,4 +3,4 @@ spring:
     name: service-test
   cloud:
     config:
-      uri: http://54.202.26.189:8888
+      uri: http://54.200.126.256:8888

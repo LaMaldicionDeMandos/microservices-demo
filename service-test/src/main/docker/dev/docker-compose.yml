@@ -1,0 +1,10 @@
+version: '2'
+services:
+  test-service:
+    build: ..
+    image: lamaldiciondemandos/tmx-test-service:v1
+    ports:
+      - "8080:8080"
+    environment:
+      PROFILE: "dev"
+      CONFIGSERVER_URI: http://54.200.126.256:8888
