@@ -8,5 +8,5 @@ spring:
       enable: true
       server:
         git:
-          uri: git@github.com:LaMaldicionDeMandos/microservices-demo/
+          uri: https://3c93c937cde4d1d281fcd899c1b843474d85d65c:x-oauth-basic@github.com/LaMaldicionDeMandos/microservices-demo/
           searchPaths: configuration/service-test

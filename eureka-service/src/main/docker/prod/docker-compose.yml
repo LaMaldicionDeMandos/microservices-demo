@@ -6,4 +6,4 @@ services:
     ports:
       - "8761:8761"
     environment:
-    PROFILE: "production"
+      PROFILE: "production"

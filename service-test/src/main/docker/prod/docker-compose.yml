@@ -6,4 +6,5 @@ services:
     ports:
       - "8080:8080"
     environment:
-      PROFILE: "prod"
+      PROFILE: "production"
+      CONFIGSERVER_URI: http://172.17.0.2:8888
