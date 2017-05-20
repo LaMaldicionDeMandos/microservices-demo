@@ -8,3 +8,11 @@ eureka:
   #Uncomment when working in a development mode.
   #server:
     #waitTimeInMsWhenSyncEmpty: 5
+endpoints:
+  health:
+    sensitive: false
+info:
+  build:
+    groupId: @project.groupId@
+    artifactId: @project.artifactId@
+    version: @project.version@
