@@ -12,6 +12,6 @@ endpoints:
     sensitive: false
 info:
   build:
-    groupId: @project.groupId@
-    artifactId: @project.artifactId@
-    version: @project.version@      
+    groupId: "@project.groupId@"
+    artifactId: "@project.artifactId@"
+    version: "@project.version@"      
