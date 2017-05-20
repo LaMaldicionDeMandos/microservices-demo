@@ -3,13 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.pasut.demo.microservices</groupId>
 	<artifactId>eureka-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<docker.image.name>lamaldiciondemandos/tmx-eureka-service</docker.image.name>
-    	<docker.image.tag>v1</docker.image.tag>
+    	<docker.image.tag>${project.version}</docker.image.tag>
 	</properties>
 
 	<parent>
