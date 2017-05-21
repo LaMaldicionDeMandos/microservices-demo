@@ -1,0 +1,7 @@
+#Default port is 8761 server:
+server:
+  port: 8989
+turbine:
+  aggregator:
+  appConfig: service-test #Separar con "," cada microservicio service-test,other-service
+  clusterNameExpression: "'default'"
