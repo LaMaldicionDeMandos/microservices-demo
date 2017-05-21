@@ -18,3 +18,10 @@ info:
     groupId: @project.groupId@
     artifactId: @project.artifactId@
     version: @project.version@
+---
+spring:
+  profiles: development
+  cloud:
+    server:
+      git:
+        uri: https://github.com/LaMaldicionDeMandos/microservices-demo/
