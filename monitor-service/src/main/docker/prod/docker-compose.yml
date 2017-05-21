@@ -1,0 +1,10 @@
+version: '2'
+services:
+  test-service:
+    build: ..
+    image: lamaldiciondemandos/tmx-monitor-service:v1
+    ports:
+      - "8989:8989"
+    environment:
+      PROFILE: "production"
+      CONFIGSERVER_URI: http://172.17.0.2:8888
