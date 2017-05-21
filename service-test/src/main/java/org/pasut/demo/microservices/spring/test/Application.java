@@ -27,9 +27,7 @@ public class Application {
     private final static Logger log = LoggerFactory.getLogger(Application.class);
 
     @RequestMapping("/")
-    @HystrixCommand(threadPoolProperties = {
-            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "2000")
-    })
+    @HystrixCommand
     String hello(@Value("${greeting}") String hello) {
         log.info("Call to hello: " + hello);
         return hello;
