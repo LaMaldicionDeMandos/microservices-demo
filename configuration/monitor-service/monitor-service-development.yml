@@ -1,0 +1,4 @@
+turbine:
+  aggregator:
+  appConfig: service-test #Separar con "," cada microservicio service-test,other-service
+  clusterNameExpression: "'default'"
