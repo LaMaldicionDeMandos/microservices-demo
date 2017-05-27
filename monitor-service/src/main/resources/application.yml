@@ -1,4 +1,7 @@
-#Default port is 8761 server:
+# Para acceder al monitor tengo que ir a la url http://<monitor-url>:8989/hystrix
+# Luego en el parametro que hay que pasar pasamos la misma url pero http://<monitor-url>:8989/turbine.stream
+# Esto es porque turbine me ayuda a ver muchas apps al mismo tiempo
+# Si quiero ver una individual tengo que user en ese atributo http://<some-service-url>:<port>/hystrix.stream
 endpoints:
   health:
     sensitive: false
@@ -10,6 +13,9 @@ info:
 spring:
   application:
     name: monitor-service
+  cloud:
+    config:
+      uri: http://localhost:8888
 server:
   port: 8989
 turbine:
