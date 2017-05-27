@@ -1,7 +1,26 @@
 #Default port is 8761 server:
+endpoints:
+  health:
+    sensitive: false
+info:
+  build:
+    groupId: @project.groupId@
+    artifactId: @project.artifactId@
+    version: @project.version@
+spring:
+  application:
+    name: monitor-service
 server:
   port: 8989
 turbine:
   aggregator:
   appConfig: service-test #Separar con "," cada microservicio service-test,other-service
   clusterNameExpression: "'default'"
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
